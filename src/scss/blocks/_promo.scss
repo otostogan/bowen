@@ -1,0 +1,40 @@
+.promo{
+    padding-top: 190px;
+    padding-bottom: 60px;
+    &__description{
+        max-width: 1070px;
+        h1{
+            font-style: normal;
+            font-weight: 800;
+            font-size: 72px;
+            line-height: 73px;
+            color: #02264D;
+            margin-bottom: 20px;
+        }
+        p{
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 32px;
+            letter-spacing: 0.02em;
+            color: #222222;
+        }
+    }
+}
+@media(max-width: 1200px){
+    .promo{
+        padding-top: 150px;
+        &__description{
+            h1{
+                font-size: 48px;
+                line-height: 62px;
+                margin-bottom: 10px;
+            }
+            p{
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 26px;
+            }
+        }
+    }
+}
