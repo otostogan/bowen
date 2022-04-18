@@ -27,7 +27,7 @@ gulp.task("scripts", () => {
                 .pipe(webpack({
                     mode: 'development',
                     output: {
-                        filename: 'script.js'
+                        filename: 'bowen_video_gallery_scripts.js'
                     },
                     watch: false,
                     devtool: "source-map",
@@ -40,7 +40,7 @@ gulp.task("build-prod-js", () => {
                 .pipe(webpack({
                     mode: 'production',
                     output: {
-                        filename: 'script.js'
+                        filename: 'bowen_video_gallery_scripts.js'
                     },
                     module: {
                         rules: [

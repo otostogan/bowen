@@ -1,27 +1,23 @@
 <?php
 
-add_action('wp_enqueue_scripts', 'bowen_scripts');
+require_once 'inc/acf-field.php';
 
-function bowen_scripts(){
-    wp_enqueue_style('bowen-css', get_template_directory_uri() . '/assets/css/style.min.css');
-    wp_enqueue_script('menu-js', get_template_directory_uri() . '/assets/js/menu.js', array('jquery'), null, true);
+add_action('wp_enqueue_scripts', 'bowen_video_gallery_scripts');
+
+function bowen_video_gallery_scripts(){
 
     if ( is_page_template('page-sorter.php') ) {
-        wp_enqueue_script('bowen-js', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), null, true);
+        wp_enqueue_style('bowen_video_gallery_scripts-css', get_template_directory_uri() . '/assets/css/style.min.css');
+        wp_enqueue_script('bowen_video_gallery-js', get_template_directory_uri() . '/assets/js/bowen_video_gallery_scripts.js', array('jquery'), null, true);
     }
     wp_localize_script(
-        'bowen-js',
+        'bowen_video_gallery-js',
         'bowen_ajax',
         array('ajax_url'=> admin_url('admin-ajax.php'))
     );
 }
-
-add_theme_support( 'menus' );
-add_theme_support( 'custom-logo' );
-
 add_action( 'wp_ajax_load', 'load' ); 
 add_action( 'wp_ajax_nopriv_load', 'load' ); 
- 
 function load(){
     $allI = $_POST['allI'];
     $perP = $_POST['perP'];
@@ -138,7 +134,6 @@ function load(){
 
 	die; 
 }
-
 function getWordsFromString($str,$word_count){
 	$new_str=$str;
 	$_strArr=explode(" ",$str);
@@ -155,5 +150,4 @@ function getWordsFromString($str,$word_count){
 	}
 	return $new_str;
 }
-
 ?>

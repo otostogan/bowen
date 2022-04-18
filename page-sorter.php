@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: ACF Template
+* Template Name: Video Gallery
 */
 global $post;
 get_header();
