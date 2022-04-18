@@ -5,9 +5,8 @@ require_once 'inc/acf-field.php';
 add_action('wp_enqueue_scripts', 'bowen_video_gallery_scripts');
 
 function bowen_video_gallery_scripts(){
-
     if ( is_page_template('page-sorter.php') ) {
-        wp_enqueue_style('bowen_video_gallery_scripts-css', get_template_directory_uri() . '/assets/css/style.min.css');
+        wp_enqueue_style('bowen_video_gallery-css', get_template_directory_uri() . '/assets/css/bowen_video_gallery.css');
         wp_enqueue_script('bowen_video_gallery-js', get_template_directory_uri() . '/assets/js/bowen_video_gallery_scripts.js', array('jquery'), null, true);
     }
     wp_localize_script(
